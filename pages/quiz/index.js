@@ -11,7 +11,7 @@ function Quiz(props) {
     return txt.value;
   }
 
-  const [quiz, setQuiz] = React.useState(props.quiz.results);
+  const [quiz, setQuiz] = React.useState(props.quiz && props.quiz.results);
 
   const [end, setEnd] = React.useState(() => false);
   const [points, setPoints] = React.useState(() => 0);
