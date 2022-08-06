@@ -2,6 +2,7 @@ import React from "react";
 
 export default function Answers(props) {
   //   const [answers, setAnswers] = React.useState(props.answers)
+  const { dark } = props;
 
   const capital = (str) => {
     const val = str[0].toUpperCase();
@@ -27,7 +28,6 @@ export default function Answers(props) {
         : "bg-gray-100";
     }
   }
-  const { dark } = props;
 
   const render = props.answers.map((answer) => {
     return (
@@ -50,7 +50,7 @@ export default function Answers(props) {
   });
 
   return (
-    <div>
+    <div key={props.key}>
       <p
         className={`${
           dark ? "text-blue-200" : "text-blue-900"
