@@ -18,9 +18,10 @@ function Quiz(props) {
 
   const [questions, setQuestions] = React.useState(() => {
     const tab = [];
-    quiz.map((unit) => {
-      tab.push(decode(unit.question));
-    });
+    quiz &&
+      quiz.map((unit) => {
+        tab.push(decode(unit.question));
+      });
     return tab;
   });
 
