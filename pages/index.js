@@ -12,6 +12,9 @@ export default function Home({ dark }) {
         className={`${
           dark ? "text-blue-200" : "text-blue-900"
         } font-bold text-3xl tracking-wider`}
+        onClick={() => {
+          increment();
+        }}
       >
         Quizzical
       </h1>

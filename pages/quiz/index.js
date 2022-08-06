@@ -4,6 +4,14 @@ import Answers from "../../components/Answers";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+const fetcher = async () => {
+  const response = await fetch(
+    "https://opentdb.com/api.php?amount=5&category=9&type=multiple"
+  );
+  const data = await response.json();
+  return data;
+};
+
 function Quiz(props) {
   function decode(html) {
     var txt = document.createElement("textarea");
@@ -160,12 +168,15 @@ function Quiz(props) {
           </p>
         )}
         {end ? (
-          <button
-            className="px-16 py-3 rounded-lg text-white bg-blue-900 font-semibold"
-            onClick={() => push("/")}
-          >
-            Restart
-          </button>
+          // <a href="https://quiz-app-aymenmzz.vercel.app">
+          <a href="/">
+            <button
+              className="px-16 py-3 rounded-lg text-white bg-blue-900 font-semibold"
+              onClick={() => push("/")}
+            >
+              Restart
+            </button>
+          </a>
         ) : (
           <button
             className="px-16 py-3 rounded-lg text-white bg-blue-900 font-semibold"

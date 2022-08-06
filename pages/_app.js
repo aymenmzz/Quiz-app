@@ -11,16 +11,16 @@ const fetcher = async () => {
   return data;
 };
 
-function MyApp({ Component, pageProps }, props) {
-  const { data, error } = useSWR("test", fetcher);
-  console.log(data);
+function MyApp({ Component, pageProps }) {
+  const { data, error } = useSWR("fetch", fetcher);
+
   const [dark, setDark] = React.useState(false);
 
   const toggleDark = () => setDark((prevDark) => !prevDark);
 
   return (
     <Layout dark={dark} toggleDark={toggleDark}>
-      <Component {...pageProps} dark={dark} quiz={data && data} />
+      <Component {...pageProps} dark={dark} quiz={data} />
     </Layout>
   );
 }
