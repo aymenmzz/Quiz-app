@@ -29,7 +29,7 @@ export default function Answers(props) {
     }
   }
 
-  const render = props.answers.map((answe, index) => {
+  const render = props.answers.map((answer, index) => {
     return (
       <button
         key={index}
@@ -51,7 +51,7 @@ export default function Answers(props) {
   });
 
   return (
-    <div key={props.key}>
+    <div>
       <p
         className={`${
           dark ? "text-blue-200" : "text-blue-900"

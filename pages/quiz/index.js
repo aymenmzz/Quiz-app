@@ -178,12 +178,12 @@ function Quiz(props) {
   );
 }
 
-export async function getServerSideProps() {
-  const response = await fetch(
-    "https://opentdb.com/api.php?amount=5&category=9&type=multiple"
-  );
-  const data = await response.json();
-  return { props: { quiz: data } };
-}
+// export async function getServerSideProps() {
+//   const response = await fetch(
+//     "https://opentdb.com/api.php?amount=5&category=9&type=multiple"
+//   );
+//   const data = await response.json();
+//   return { props: { quiz: data } };
+// }
 
 export default Quiz;
