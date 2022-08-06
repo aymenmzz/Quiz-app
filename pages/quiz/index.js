@@ -178,7 +178,7 @@ function Quiz(props) {
               Restart
             </button>
           </a>
-          //</Link>
+          {/* </Link> */}
         ) : (
           <button
             className="px-16 py-3 rounded-lg text-white bg-blue-900 font-semibold"
