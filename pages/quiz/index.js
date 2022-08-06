@@ -29,10 +29,11 @@ function Quiz(props) {
     const tabfin = [];
     const rightAnswers = [];
     let i = 0;
-    quiz.map((unit) => {
-      rightAnswers.push(unit.correct_answer);
-      retour.push([...unit.incorrect_answers, unit.correct_answer].sort());
-    });
+    quiz &&
+      quiz.map((unit) => {
+        rightAnswers.push(unit.correct_answer);
+        retour.push([...unit.incorrect_answers, unit.correct_answer].sort());
+      });
     retour.map((tab) => {
       const tabtemp = [];
       tab.map((val) => {
