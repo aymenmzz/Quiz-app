@@ -169,15 +169,16 @@ function Quiz(props) {
           </p>
         )}
         {end ? (
-          // <a href="https://quiz-app-aymenmzz.vercel.app">
-          <Link href="/">
+           <a href="https://quiz-app-aymenmzz.vercel.app">
+          //<Link href="/">
             <button
               className="px-16 py-3 rounded-lg text-white bg-blue-900 font-semibold"
               onClick={() => push("/")}
             >
               Restart
             </button>
-          </Link>
+          </a>
+          //</Link>
         ) : (
           <button
             className="px-16 py-3 rounded-lg text-white bg-blue-900 font-semibold"
