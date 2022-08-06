@@ -3,6 +3,7 @@ import { push } from "next/router";
 import Answers from "../../components/Answers";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Link from "next/link";
 
 const fetcher = async () => {
   const response = await fetch(
@@ -169,14 +170,14 @@ function Quiz(props) {
         )}
         {end ? (
           // <a href="https://quiz-app-aymenmzz.vercel.app">
-          <a href="/">
+          <Link href="/">
             <button
               className="px-16 py-3 rounded-lg text-white bg-blue-900 font-semibold"
               onClick={() => push("/")}
             >
               Restart
             </button>
-          </a>
+          </Link>
         ) : (
           <button
             className="px-16 py-3 rounded-lg text-white bg-blue-900 font-semibold"
