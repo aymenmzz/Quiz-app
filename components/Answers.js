@@ -29,9 +29,10 @@ export default function Answers(props) {
     }
   }
 
-  const render = props.answers.map((answer) => {
+  const render = props.answers.map((answe, index) => {
     return (
       <button
+        key={index}
         onClick={() => props.handleClick(answer.text, props.id)}
         className={`${style(
           answer.isSelected,
