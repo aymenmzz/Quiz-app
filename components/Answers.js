@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function Answers(props) {
-  //   const [answers, setAnswers] = React.useState(props.answers)
   const { dark } = props;
 
   const capital = (str) => {
@@ -11,21 +10,32 @@ export default function Answers(props) {
   };
 
   function style(selected, end, right) {
-    if (end) {
-      if (selected && !right) {
-        return "bg-red-200 opacity-30";
-      }
-      if (right) return "bg-green-300 border-none";
+    if (dark) {
+      if (end) {
+        if (selected && !right) {
+          return "bg-red-700 opacity-30";
+        }
+        if (right) return "bg-green-700 ";
 
-      if (!selected && !right) {
-        return "bg-white opacity-30";
+        if (!selected && !right) {
+          return "bg-gray-500 opacity-30";
+        }
+      } else {
+        return selected ? "bg-indigo-300 text-blue-800" : "bg-gray-500";
       }
     } else {
-      return selected
-        ? "bg-indigo-300 text-blue-800"
-        : props.dark
-        ? "bg-gray-500"
-        : "bg-gray-100";
+      if (end) {
+        if (selected && !right) {
+          return "bg-red-200 opacity-30";
+        }
+        if (right) return "bg-green-300 border-none";
+
+        if (!selected && !right) {
+          return "bg-white opacity-30";
+        }
+      } else {
+        return selected ? "bg-indigo-300 text-blue-800" : "bg-gray-100";
+      }
     }
   }
 
@@ -38,11 +48,11 @@ export default function Answers(props) {
           answer.isSelected,
           props.end,
           answer.isRight
-        )} rounded-lg border${answer.isSelected ? "-none" : ""} ${
+        )} rounded-lg border ${
           dark
             ? "border-blue-200 text-blue-200"
             : "border-blue-900 text-blue-900"
-        } button-select  font-semibold`}
+        } button-select font-semibold`}
       >
         {" "}
         {capital(answer.text)}
@@ -51,7 +61,7 @@ export default function Answers(props) {
   });
 
   return (
-    <div>
+    <div style={{ paddingLeft: "3%", paddingRight: "3%" }}>
       <p
         className={`${
           dark ? "text-blue-200" : "text-blue-900"

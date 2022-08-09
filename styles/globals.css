@@ -55,7 +55,7 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #000000;
+  background-color: rgb(31 41 55);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -67,17 +67,17 @@ a {
   width: 15px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: rgb(209 213 219);
   -webkit-transition: .4s;
   transition: .4s;
 }
 
 input:checked + .slider {
-  background-color: #ffffff;
+  background-color: rgb(209 213 219);
 }
 
 input:checked + .slider:before {
-  background-color: black;
+  background-color: rgb(31 41 55);
 }
 
 input:focus + .slider {

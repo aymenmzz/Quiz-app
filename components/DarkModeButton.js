@@ -5,8 +5,9 @@ function DarkModeButton({ toggleDark, dark }) {
     <div
       id="dark-mode-container"
       className={
-        dark ? "bg-gray-900 text-blue-200" : "bg-gray-200 text-blue-900"
+        dark ? "bg-gray-800 text-blue-300" : "bg-gray-300 text-blue-800"
       }
+      style={{ marginRight: 3 }}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

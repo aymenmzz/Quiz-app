@@ -60,8 +60,6 @@ function Quiz(props) {
     return tabfin;
   });
 
-  console.log(answers);
-
   //verifier si aucun bouton n'a été séléctionné
   const noSelect = () => {
     let retour = [true, true, true, true, true];
@@ -74,8 +72,6 @@ function Quiz(props) {
       retour[0] || retour[1] || retour[2] || retour[3] || retour[4];
     return retourBool;
   };
-
-  console.log(noSelect());
 
   function handleClick(text, id) {
     if (!end) {
@@ -144,7 +140,7 @@ function Quiz(props) {
   }
 
   return (
-    <div className={props.dark ? "bg-gray-900" : "bg-gray-200"}>
+    <div>
       {questions.map((question, index) => {
         return (
           <Answers
@@ -169,19 +165,17 @@ function Quiz(props) {
           </p>
         )}
         {end ? (
-           <a href="https://quiz-app-aymenmzz.vercel.app">
-          {/* <Link href="/"> */}
+          <a href="https://quiz-app-aymenmzz.vercel.app">
             <button
-              className="px-16 py-3 rounded-lg text-white bg-blue-900 font-semibold"
+              className="px-16 py-3 rounded-lg text-xl tracking-widest text-white bg-blue-900 font-semibold"
               onClick={() => push("/")}
             >
               Restart
             </button>
-            {/* </Link> */}
-            </a>
+          </a>
         ) : (
           <button
-            className="px-16 py-3 rounded-lg text-white bg-blue-900 font-semibold"
+            className="px-16 py-3 rounded-lg text-xl tracking-widest text-white bg-blue-900 font-semibold"
             onClick={handleEnd}
           >
             Verify
@@ -193,12 +187,13 @@ function Quiz(props) {
   );
 }
 
-// export async function getServerSideProps() {
-//   const response = await fetch(
-//     "https://opentdb.com/api.php?amount=5&category=9&type=multiple"
-//   );
-//   const data = await response.json();
-//   return { props: { quiz: data } };
-// }
-
 export default Quiz;
+
+// <Link href="/">
+//             <button
+//               className="px-16 py-3 rounded-lg text-xl tracking-widest text-white bg-blue-900 font-semibold"
+//               onClick={() => push("/")}
+//             >
+//               Restart
+//             </button>
+//           </Link>

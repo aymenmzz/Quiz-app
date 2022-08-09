@@ -26,11 +26,11 @@ export default function Home({ dark }) {
         The quiz that will expend your overall culture !
       </p>
       <button
-        className="px-16 py-3 rounded-lg text-white bg-blue-900 font-semibold"
+        className="px-16 py-3 rounded-lg text-xl tracking-widest text-white bg-blue-900 font-semibold"
         onClick={() => push("/quiz")}
       >
         {" "}
-        Start quiz
+        Start
       </button>
     </div>
   );
