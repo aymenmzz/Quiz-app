@@ -2,6 +2,8 @@ import "../styles/globals.css";
 import React from "react";
 import Layout from "../components/Layout";
 import useSWR from "swr";
+import Loading from "react-loading";
+
 
 const fetcher = async () => {
   const response = await fetch(
@@ -13,6 +15,8 @@ const fetcher = async () => {
 
 function MyApp({ Component, pageProps }) {
   const { data, error } = useSWR("fetch", fetcher);
+  
+  if(!data) return <Loading />;
 
   const [dark, setDark] = React.useState(false);
 
