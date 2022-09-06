@@ -36,15 +36,6 @@ export default function Layout({ children, dark, toggleDark }) {
       </header>
 
       {children}
-      <footer
-        className={`py-3 flex justify-around items-center font-bold text-lg ${
-          dark ? "bg-gray-800 text-blue-300" : "bg-gray-300 text-blue-800"
-        }`}
-      >
-        <span onClick={() => push("/annexe")}>
-          Annexe {"(pour employeur potentiel)"}
-        </span>
-      </footer>
     </div>
   );
 }
